@@ -1,4 +1,4 @@
-<!-- put in ./www directory -->
+    <!-- put in ./www directory -->
 
 <html>
  <head>
@@ -45,7 +45,7 @@
     mysqli_close($conn);
 
     try {
-        $pgsqlConn = new PDO('pgsql:host=postgresql;port=5432;dbname=dbname', 'username', '1234');
+        $pgsqlConn = new PDO('pgsql:host=PostgreSQL;port=5432;dbname=your_database', 'postgres', '1234');
 
         $query = "SELECT * FROM person;";
         $result = $pgsqlConn->query($query);

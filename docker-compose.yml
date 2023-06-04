@@ -14,8 +14,7 @@ services:
             - "db"
 
     db:
-        build: .
-        image: mysql:5.7.13
+        image: mysql:5.7
         ports: 
             - "3306:3306"
         environment:
@@ -30,7 +29,6 @@ services:
             - default
 
     phpmyadmin:
-        build: .
         image: phpmyadmin/phpmyadmin
         links: 
             - db:db
@@ -42,18 +40,17 @@ services:
             MYSQL_ROOT_PASSWORD: test
 
     postgresql:
-        build: .
         image: postgres:latest
         restart: always
         networks:
             - default
         environment:
-            POSTGRES_DB: "dbname"
-            POSTGRES_USER: "username"
+            POSTGRES_DB: "your_database"
+            POSTGRES_USER: "postgres"
             POSTGRES_PASSWORD: "1234"
         ports:
             - "5432:5432"
-            
+          
             
 volumes:
     persistent:
